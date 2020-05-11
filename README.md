@@ -1,10 +1,24 @@
 # minikube
 
+NOTE: This DD fork of `minikube` exists because the standard `minikube` ISO does not include kernel modules necessary for disruptions in the [chaos controller](https://github.com/DataDog/chaos-controller), namely `SCH_PRIO` at this time.
+
+Thus, we added this kernel module here, in [this file](./deploy/iso/minikube-iso/board/coreos/minikube/linux_defconfig), and rebuilt the ISO.
+
+The most current ISO with the kernel modules added currently lives in this S3 location, which can be passed as the value of the `--iso-url` when you `minikube start`:
+
+```
+https://public-chaos-controller.s3.amazonaws.com/minikube/minikube.iso
+```
+
+Please update this README if you upload a new version!
+
+---
+
 [![BuildStatus Widget]][BuildStatus Result]
 [![GoReport Widget]][GoReport Status]
 [![Github All Releases](https://img.shields.io/github/downloads/kubernetes/minikube/total.svg)](https://github.com/kubernetes/minikube/releases/latest)
 [![Latest Release](https://img.shields.io/github/v/release/kubernetes/minikube?include_prereleases)](https://github.com/kubernetes/minikube/releases/latest)
- 
+
 
 [BuildStatus Result]: https://travis-ci.org/kubernetes/minikube
 [BuildStatus Widget]: https://travis-ci.org/kubernetes/minikube.svg?branch=master
@@ -14,7 +28,7 @@
 
 <img src="https://github.com/kubernetes/minikube/raw/master/images/logo/logo.png" width="100" alt="minikube logo">
 
-minikube implements a local Kubernetes cluster on macOS, Linux, and Windows. minikube's [primary goals](https://minikube.sigs.k8s.io/docs/concepts/principles/) are to be the best tool for local Kubernetes application development and to support all Kubernetes features that fit. 
+minikube implements a local Kubernetes cluster on macOS, Linux, and Windows. minikube's [primary goals](https://minikube.sigs.k8s.io/docs/concepts/principles/) are to be the best tool for local Kubernetes application development and to support all Kubernetes features that fit.
 
 <img src="https://raw.githubusercontent.com/kubernetes/minikube/master/site/static/images/screenshot.png" width="738" alt="screenshot">
 

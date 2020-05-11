@@ -4,10 +4,10 @@ NOTE: This DD fork of `minikube` exists because the standard `minikube` ISO does
 
 Thus, we added this kernel module here, in [this file](./deploy/iso/minikube-iso/board/coreos/minikube/linux_defconfig), and rebuilt the ISO.
 
-The most current ISO with the kernel modules added currently lives in this S3 location:
+The most current ISO with the kernel modules added currently lives in this S3 location, which can be passed as the value of the `--iso-url` when you `minikube start`:
 
 ```
-TODO
+https://public-chaos-controller.s3.amazonaws.com/minikube/minikube.iso
 ```
 
 Please update this README if you upload a new version!

@@ -1,16 +1,16 @@
 # minikube
 
----
-
 NOTE: This DD fork of `minikube` exists because the standard `minikube` ISO does not include kernel modules necessary for disruptions in the [chaos controller](https://github.com/DataDog/chaos-controller), namely `SCH_PRIO` at this time.
 
 Thus, we added this kernel module here, in [this file](./deploy/iso/minikube-iso/board/coreos/minikube/linux_defconfig), and rebuilt the ISO.
 
-The most current ISO with the kernel modules added currently lives here (please update if you build and upload a new one):
+The most current ISO with the kernel modules added currently lives in this S3 location:
 
 ```
 TODO
 ```
+
+Please update this README if you upload a new version!
 
 ---
 
